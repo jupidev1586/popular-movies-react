@@ -1,2 +1,2 @@
 ### Jupibook
-La mia Applicazione in React che emula in alcune funzionalità il famoso social network 
+La mia Applicazione in React che emula in alcune funzionalità Netflix o Prime Video
