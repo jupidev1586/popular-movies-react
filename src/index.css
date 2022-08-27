@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  background: #fde2d8 !important;
+  font-size: 14px;
+  color: #333 !important;
+}
+a {
+  text-decoration: none !important;
+  color: #A10F15 !important;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #E03535;
+}
+input { font-family:'Open Sans', sans-serif; color: #333 !important}
+
+/* RESET RSUITE SIDENAV */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kdam Thmor Pro', sans-serif !important;
+}
+h1 {
+  font-size: 34px !important;
+  line-height: 20px !important;
+}
+h2 {
+  font-size: 28px !important;
+  line-height: 20px !important;
+}
+h3 {
+  font-size: 18px !important;
+  line-height: 20px !important;
+}
+h4 {
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+h5 {
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+h6 {
+  font-size: 12px !important;
+  line-height: 20px !important;
+}
+
+
+ul {
+  margin-bottom: 0 !important;
+}
+.rs-drawer-header .rs-drawer-header-close {
+  top: 15px !important;
+}
+.rs-btn-icon-with-text.rs-btn.rs-btn-icon-placement-left {
+  font-weight: bold !important;
+}
+.rs-btn-icon-with-text.rs-btn.rs-btn-icon-placement-left {
+  padding: 8px 0 8px 0;
+  background: tomato;
+  color: white;
+}
+.rs-btn-icon-with-text>.rs-icon,
+.rs-btn-icon-with-text:focus>.rs-icon {
+  background-color: transparent !important;
+}
+.rs-btn svg.rs-icon,
+.rs-btn svg.rs-icon { 
+  transition: all 0.5s ease-in-out
+}
+.rs-btn svg.rs-icon:hover,
+.rs-btn:hover svg.rs-icon {
+  transform: translateX(10px);
+}
+.rs-drawer-body {
+  padding: 15px 25px 15px 15px !important
+}
+.rs-drawer-left.rs-drawer-xs, .rs-drawer-right.rs-drawer-xs {
+  width: 300px !important
+}
+.rs-drawer-header {
+  background: tomato;
+}
+.rs-drawer-header .rs-btn-icon.rs-btn-sm>.rs-icon {
+  color: white;
+}
+.rs-drawer-header .rs-btn-subtle.rs-btn-active, 
+.rs-drawer-header .rs-btn-subtle:active,
+.rs-drawer-header .rs-btn-subtle:focus, .rs-drawer-header  .rs-btn-subtle:hover
+{
+  color: #272c36;
+  color: var(--rs-btn-subtle-active-text);
+  background-color: #e5e5ea;
+  background-color: #f44336;
+}
+/* RESET RSUITE SIDENAV */
+
+.tc-bold { font-weight: bold }
+.tc-red {
+  color: #E03535;
+}
+.mt-1 {
+  margin-top: 15px;
+}
+.mt-2 {
+  margin-top: 30px;
+}
+.mt-3 {
+  margin-top: 100px !important;
+}
+.mt-4 {
+  margin-top: 7rem !important;
+}
+.my-4 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.mt-5 {
+  margin-top: 120px;
+}
+.d-block {
+  display: block;
+}
+.list-unstyled {
+  list-style-type: none;
+}
+@media (min-width: 992px) {
+  
+  .d-lg-flex {
+    display: flex;
+  }
+}
+.d-flex {
+  display: flex;
+  gap: 10px
+}
+.text-center {
+  text-align: center;
+}
+.bg-white {
+  background: white;
+}
+.padded {
+  padding: 15px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.pad-100 {
+  padding: 100px;
+}
+@media (max-width: 991.98px) {
+  .pad-100 {
+    padding: 100px 15px;
+  }
+}
+.container { 
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container-fluid-flex { 
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.swiper-slide { 
+  width: 100% !important;
+}

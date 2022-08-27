@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+/* @import '~rsuite/styles/index.less';
+@import 'custom-theme.less';  */
+@import '~rsuite/dist/rsuite.min.css';
+
+.App {
+  color: rgb(24, 24, 24);
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
