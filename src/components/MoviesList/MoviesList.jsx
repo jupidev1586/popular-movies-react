@@ -10,7 +10,7 @@ const MoviesList = ( { modalVisibility } ) => {
   useEffect(() => {
     fetch(SITE_URL)
     .then(res => res.json())
-    .then(data => setMoviesList(data));
+    .then(data => setMoviesList(data.results));
   }, [])
   
   return (

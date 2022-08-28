@@ -1,4 +1,4 @@
-.MoviesList {
+.MoviesListGenre {
   margin-top: 60px;
   cursor: grab;
   width: 100%;
@@ -9,7 +9,7 @@
 }
 
 @media (min-width: 768px) {
-  .MoviesList { 
+  .MoviesListGenre { 
     overflow-x: auto;
   }
 }

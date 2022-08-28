@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { SITE_URL } from './utils/api';
 import Navbar from './components/Navbar';
 import MoviesList from './components/MoviesList';
 import MoviesListGenre from './components/MoviesListGenre';
@@ -17,6 +16,12 @@ function App() {
 
   const [option, setOption] = useState(0);
 
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=ad6baf64ad75ee341315fda666f2d48e&with_genres=12`)
+    .then(res => res.json())
+    .then(data => setOption(data.results));  
+  }, [])
+
   const handleChange = (option) => {
     setOption({ option });
   };
@@ -26,15 +31,6 @@ function App() {
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' }
   ]
-
-  const [optionEl, setOptionEl] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=ad6baf64ad75ee341315fda666f2d48e&with_genres=12`)
-    .then(res => res.json())
-    .then(data => setOptionEl(data));  
-      
-  }, [])
 
   const [modalData, setModalData] = useState({});
   const [isModalVisibile, setModalVisibility] = useState(false);
@@ -48,7 +44,9 @@ function App() {
     <div className="App">
       <Navbar />
       <MoviesList modalVisibility={onHandleModal} />
-      <Select options={options} onChange={handleChange}/>
+      <h3 className="mt-3">Change Genre...</h3>
+      <Select className="mt-1" options={options} onChange={ options } />
+      <MoviesListGenre modalVisibility={onHandleModal} />
       <Modal MoviesListed={modalData} isVisibile={isModalVisibile} onModalClick={setModalVisibility}/>
     </div>
   );
