@@ -14,7 +14,7 @@ const ListItem = ({link="/", title}) => {
 }
 const UserItem = () => {
   return (
-    <span className="ListItem__link tc-bold">{localStorage.getItem('username') || 'no-user'}</span>
+    <span className="ListItem__link tc-bold">{localStorage.getItem('username') || ''}</span>
   )
 }
 

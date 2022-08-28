@@ -48,7 +48,7 @@ function App() {
       <MoviesList modalVisibility={onHandleModal} />
       <h3 className="mt-3">Change Genre...</h3>
       <Select className="mt-1" options={options} onChange={ options } />
-      <small className="mt-3">Hold SHIFT and scroll</small>
+      <small className="mt-2">Hold SHIFT and scroll</small>
       <MoviesListGenre modalVisibility={onHandleModal} />
       <Modal MoviesListed={modalData} isVisibile={isModalVisibile} onModalClick={setModalVisibility}/>
     </div>
