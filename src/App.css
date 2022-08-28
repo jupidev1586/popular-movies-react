@@ -5,7 +5,7 @@
 @import '~rsuite/dist/rsuite.min.css';
 
 .App {
-  color: rgb(24, 24, 24);
+  color: #eee;
   display: flex;
   font-size: 0.9rem;
   justify-content: space-evenly;
@@ -15,3 +15,7 @@
 }
 
 
+.css-b62m3t-container {
+  width: 50%;
+  color: #333;
+}
