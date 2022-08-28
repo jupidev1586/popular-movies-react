@@ -43,9 +43,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <h3 className="mt-3">Popular Movies.</h3>
+      <small>Hold SHIFT and scroll</small>
       <MoviesList modalVisibility={onHandleModal} />
       <h3 className="mt-3">Change Genre...</h3>
       <Select className="mt-1" options={options} onChange={ options } />
+      <small className="mt-3">Hold SHIFT and scroll</small>
       <MoviesListGenre modalVisibility={onHandleModal} />
       <Modal MoviesListed={modalData} isVisibile={isModalVisibile} onModalClick={setModalVisibility}/>
     </div>

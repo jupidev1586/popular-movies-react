@@ -75,7 +75,7 @@ ul {
 }
 .rs-btn-icon-with-text.rs-btn.rs-btn-icon-placement-left {
   padding: 8px 0 8px 0;
-  background: tomato;
+  background: #272c36;
   color: white;
 }
 .rs-btn-icon-with-text>.rs-icon,
@@ -97,7 +97,10 @@ ul {
   width: 300px !important
 }
 .rs-drawer-header {
-  background: tomato;
+  background: #272c36;
+}
+.rs-drawer-title {
+  color: white !important;
 }
 .rs-drawer-header .rs-btn-icon.rs-btn-sm>.rs-icon {
   color: white;
