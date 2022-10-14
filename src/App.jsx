@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import MoviesList from './components/MoviesList';
 import MoviesListGenre from './components/MoviesListGenre';
-import Select from 'react-select';
+import Option from './components/Option';
 import Modal from './components/Modal';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -14,23 +14,14 @@ library.add(fas);
 
 function App() {
 
-  const [option, setOption] = useState(0);
+  const [option, setOption] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=ad6baf64ad75ee341315fda666f2d48e&with_genres=12`)
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=ad6baf64ad75ee341315fda666f2d48e`)
     .then(res => res.json())
-    .then(data => setOption(data.results));  
+    .then(data => setOption(data.genres));  
+    console.log('option=======>', option)
   }, [])
-
-  const handleChange = (option) => {
-    setOption({ option });
-  };
-
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
 
   const [modalData, setModalData] = useState({});
   const [isModalVisibile, setModalVisibility] = useState(false);
@@ -40,6 +31,18 @@ function App() {
     setModalVisibility(!isModalVisibile);
   };
 
+  const [optionValue, setOptionValue] = useState('');
+  
+  const onHandleChange = (e) => {
+    e.preventDefault();
+    // setOptionValue('');
+    setOptionValue(e.target.value);
+    console.log('onFormSubmit');
+    console.log('id', e.target.id);
+  }
+  
+  // console.log('modalData.genres ======>', modalData.genres);
+  
   return (
     <div className="App">
       <Navbar />
@@ -47,10 +50,17 @@ function App() {
       <small>Hold SHIFT and scroll</small>
       <MoviesList modalVisibility={onHandleModal} />
       <h3 className="mt-3">Change Genre...</h3>
-      <Select className="mt-1" options={options} onChange={ options } />
+      <select className="Select mt-1" 
+        onChange={onHandleChange}
+        value={optionValue}
+      >
+        {
+          option.map( option => <Option filterGenre={option.name} key={option.id} id={option.id} /> )
+        }
+      </select>
       <small className="mt-2">Hold SHIFT and scroll</small>
-      <MoviesListGenre modalVisibility={onHandleModal} />
-      <Modal MoviesListed={modalData} isVisibile={isModalVisibile} onModalClick={setModalVisibility}/>
+      <MoviesListGenre modalVisibility={onHandleModal} valueAssigned={ optionValue } idOption={modalData.genres_ids}/>
+      <Modal MoviesListed={modalData} isVisibile={isModalVisibile} onModalClick={setModalVisibility} />
     </div>
   );
 }
